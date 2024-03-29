@@ -1,0 +1,37 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Plant Details - {{ plant.common_name }}{% endblock title %}
+
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'shop/css/plant_detail.css' %}">
+{% endblock extra_head %}
+
+{% block hero %}
+    <h1>Plant Shop</h1>
+    <p>Your Online Oasis for Greenery</p>
+{% endblock hero %}
+
+{% block content %}
+<div class="plant-detail">
+    <div>
+      <img src="{{ plant.photo.url }}" alt="image of plant {{ plant.formal_name }}" class="plant-image">
+    </div>
+
+    <div class="plant-info">
+      <h2>{{ plant.common_name }}</h2>
+      <h3><i>{{ plant.formal_name }}</i></h3>
+      <p>{{ plant.description }}</p>
+      <p class="price">Price: ${{ plant.unit_price }}</p>
+      <p>In stock: {{ plant.in_stock }}</p>
+      {% if plant.in_stock %}
+      <form method="post" action="{% url 'shop:buy_now' plant.pk %}">
+      {% csrf_token %}
+        <input type="submit" value="Buy Now" class="buy-now-btn">
+      </form>
+      {% else %}
+        <input type="button" value="Out of Stock" class="out-of-stock-btn" disabled>
+      {% endif %}
+    </div>
+</div>
+{% endblock content %}

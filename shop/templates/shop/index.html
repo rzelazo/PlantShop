@@ -1,0 +1,26 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'shop/css/index.css' %}">
+{% endblock extra_head %}
+
+{% block content %}
+<section class="featured">
+  {% for plant in plants %}
+    <div class="product">
+      <a href="{% url 'shop:detail' plant.pk %}" style="color: inherit; text-decoration: inherit">
+          <h2>{{ plant.common_name }}</h2>
+          <img class="product-photo" src="{{ plant.photo.url }}" alt="image of plant {{ plant.formal_name }}">
+          <p>{{ plant.description }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+<div class="about">
+    <h2>About Us</h2>
+    <p>We are passionate about plants and helping you find the perfect plant for your home or office.</p>
+</div>
+
+{% endblock content %}

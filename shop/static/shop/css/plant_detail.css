@@ -1,0 +1,67 @@
+.plant-detail {
+    display: flex;
+    flex-wrap: wrap;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+}
+
+.plant-image {
+    flex: 1 1 35%;
+    height: 100%;
+    max-height: 450px;
+    margin-right: 20px;
+}
+
+.plant-info {
+    flex: 1 1 60%;
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 24px;
+    color: #0a7e07;
+}
+
+@media (max-width: 768px) {
+    .plant-image, .plant-info {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .plant-image {
+        margin-right: 0;
+    }
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #0f9d58;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: none;
+}
+
+.buy-now-btn:hover {
+    background: #4cb781;
+}
+
+.buy-now-btn:active {
+    background: #1d6e4b;
+}
+
+.out-of-stock-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #9d0f0f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+}

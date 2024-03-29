@@ -1,0 +1,6 @@
+img.product-photo {
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: cover;
+}

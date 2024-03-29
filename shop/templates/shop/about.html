@@ -1,0 +1,68 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}O projekcie{% endblock title %}
+
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/about.css' %}">
+{% endblock extra_head %}
+
+{% block hero %}
+    <h1>Strona projektu</h1>
+    <p>Ta podstrona zawiera informacje o zrealizowanym projekcie</p>
+{% endblock hero %}
+
+{% block content %}
+<section class="about-section">
+    <h2 class="about-section-header">Wykorzystane technologie</h2>
+    <div class="about-section-categories">
+        <div class="tech-category">
+            <h3>Backend</h3>
+            <ul class="tech-list">
+                <li>Python 3.9 - Język programowania z dynamicznym typowaniem wykorzystany w oprogramowaniu serwera aplikacji.</li>
+                <li>Django 4.2 - Rozbudowany framework webowy dla języka Python, jego wykorzytanie pozwoliło uzyskać wiele funkcji "za darmo" (out of the box).
+                  Przykładem może być ORM dzięki któremu pomimo że aplikacja wykorzystuje bazę danych, to nie wymagała napisania ani linijki kodu SQL.
+                </li>
+                <li>SQLite 3 - lekka baza danych SQL,
+                  charakteryzująca się prostotą użytkowania i obsługi, idealna do aplikacji wymagających lokalnego przechowywania danych</li>
+            </ul>
+        </div>
+        <div class="tech-category">
+            <h3>Frontend</h3>
+            <ul class="tech-list">
+                <li>HTML 5 - język znaczników używany do tworzenia i prezentacji treści stron internetowych,
+                  pliki HTML tworzone były dynamicznie po stronie serwera przy wykorzystaniu języka template'ów Django Template Language.
+                  Umożliwiło to wstrzykiwanie danych o roślinach do serwowanych plików HTML,
+                  a także łatwe zachowanie spójnego stylu witryny na poszczególnych jej podstronach.
+                </li>
+                <li>CSS - język służący do stylizacji dokumentów HTML, pozwalający na określanie wyglądu i formatowania elementów na stronie internetowej.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+  <h2 class="about-section-header">Założenia odnośnie nawigacji po witrynie</h2>
+  <div class="about-section-objectives">
+    <p>Głównym założeniem projektu było stworzenie prostej aplikacji imitującej internetowy sklep oferujący rośliny.</p>
+    <p>Użytkownik po wejściu na stronę główną sklepu witany jest widokiem prezentującym polecane (na potrzeby projektu po prostu losowane) rośliny do zakupu.
+      Na każdej podstronie widoczny jest pasek nawigacji znajdujący się u góry ekranu. Ułatwia on poruszanie się po witrynie
+      i umożliwia łatwy powrót do strony głównej z każdej podstrony.
+    </p>
+    <p>Kliknięcie w artykuł przenosi użytkownika na stronę produktu. Prezentowane tam są informacje o wybranej roślinie takie jak jej
+      cena jednostkowa czy ilość sztuk na stanie.
+    Za pomocą przycisku "Buy Now" użytkownik może "kupić" wybraną roślinę. Powoduje to zmniejszenie licznika ilości sztuk na stanie o 1
+      i przekierowanie użytkownika do strony typu "Thank you page". W przypadku braku dostępności danego produktu (ilość sztuk na stanie = 0)
+      przycisk "Buy Now" jest odpowiednio zastępowany przez nieaktywny przycisk "Out of Stock".
+    </p>
+    <p>Strona "Thank you page" na którą użytkownik przekierowywany jest po zakupie, umożliwia łatwy powrót na stronę główną
+      (zarówno poprzez pasek nawigacji u góry witryny, jak i poprzez przycisk wyświetlany pod wiadomością z podziękowaniami.</p>
+
+    <p>Każdy obrazek wyświetlany w witrynie posiada tekst alternatywny, ułatwiający nawigację po stronie w przypadku braku możliwości pobrania obrazka.</p>
+
+    <p>Dzięki wykorzystaniu flexbox-ów CSS strona jest responsywna - układ elementów ulega zmianie
+      w taki sposób, aby dostosować się do wyświetlacza użytkownika.</p>
+  </div>
+
+</section>
+{% endblock content %}

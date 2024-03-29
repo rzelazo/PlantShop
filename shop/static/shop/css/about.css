@@ -1,0 +1,40 @@
+.about-section {
+    padding: 20px;
+}
+
+.about-section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-section-categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about-section-objectives {
+    margin: 10px;
+    padding: 20px;
+    background: #e9ecef;
+}
+
+.about-section-objectives p {
+    margin-bottom: 10px;
+}
+
+.tech-category {
+    margin: 10px;
+    padding: 20px;
+    background: #e9ecef;
+    width: 45%;
+}
+
+.tech-list {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+.tech-list li {
+    margin-top: 20px;
+}

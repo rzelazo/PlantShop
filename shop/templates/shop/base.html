@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Plant Shop{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'shop:home' %}">Home</a></li>
+        <li><a href="{% url 'shop:about' %}">About Project</a></li>
+        <li><a href="{% url 'shop:contact' %}">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+{% block hero %}
+    <h1>Welcome to Our Plant Shop</h1>
+    <p>Explore our wide range of greenery</p>
+{% endblock hero %}
+</div>
+
+{% block content %}
+{% endblock content %}
+
+<footer>
+    <p>Plant Shop © 2024</p>
+</footer>
+
+</body>
+</html>
